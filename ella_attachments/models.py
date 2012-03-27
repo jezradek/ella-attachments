@@ -29,7 +29,7 @@ class Attachment(models.Model):
     name = models.CharField(_('Name'), max_length=255)
     slug = models.SlugField(_('Slug'), max_length=255, unique=True)
 
-    photo = models.ForeignKey(Photo, blank=True, null=True, verbose_name=_('Photo'))
+    photo = models.ForeignKey(Photo, blank=True, null=True, verbose_name=_('Photo'), related_name='photos')
     publishables = models.ManyToManyField(Publishable, blank=True, null=True,
                                           verbose_name=_('Publishables'))
 
